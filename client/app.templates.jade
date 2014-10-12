@@ -1,5 +1,19 @@
 
 module app.templates
 
+template#app-topnav
+
+template#app-footer
+
+template#app-menu
+
 template#app-index
-	h1 Index.
+	#wrapper
+		div(ng-include='"app-menu"')
+
+		#page-wrapper.gray-bg
+			div(ng-include='"app-topnav"')
+
+			div(ui-view)
+
+			div(ng-include='"app-footer"')
