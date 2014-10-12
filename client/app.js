@@ -1,7 +1,14 @@
 (function () {
 
+var mod = angular.module('app', [
+	'ng',
+	'app.templates'
+]);
 
-var mod = angular.module('app', ['ng']);
+mod.controller('main', ['$scope', function ($scope) {
 
+	// ...
+
+}]);
 
 })();
