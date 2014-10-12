@@ -1,5 +1,13 @@
 {
-	"name": "seed",
-	"version": "0.1.0",
-	"private": true
+  "name": "seed",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.9.7",
+    "gulp": "^3.8.8",
+    "gulp-ngcompile": "^0.1.3",
+    "gulp-ngtemplates": "^0.1.2",
+    "toml": "^2.0.6",
+    "winston": "^0.8.1"
+  }
 }
