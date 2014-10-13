@@ -6,10 +6,22 @@ template#app-topnav
 template#app-footer
 
 template#app-menu
+	ul.nav#side-menu
+		li: a
+			i.fa.fa-wifi
+			span.nav-label Proxies
+			span.label.label-warning.pull-right 23/48
+		li: a(ng-click='inspinia.toggleMiniNav()')
+			i.fa.fa-rocket
+			span.nav-label Workers
+			span.label.label-info.pull-right 4
+		li: a
+			i.fa.fa-bank
+			span.nav-label Entreprises
 
 template#app-index
 	#wrapper
-		div(ng-include='"app-menu"')
+		nav.navbar-default.navbar-static-side(ng-include='"app-menu"', role='navigation')
 
 		#page-wrapper.gray-bg
 			div(ng-include='"app-topnav"')
