@@ -2,30 +2,27 @@
 module app.templates
 
 template#app-topnav
+	.row.border-bottom.white-bg
+		.col-sm-3
+			h1 Test.
+
 
 template#app-footer
 
 template#app-menu
 	ul.nav#side-menu
-		li: a
-			i.fa.fa-wifi
-			span.nav-label Proxies
+		li: a(ui-sref='timesheet' ui-sref-active='active')
+			i.fa.fa-th-list
+			span.nav-label Timesheet
 			span.label.label-warning.pull-right 23/48
-		li: a(ng-click='inspinia.toggleMiniNav()')
-			i.fa.fa-rocket
-			span.nav-label Workers
+		li: a(ui-sref='staffing')
+			i.fa.fa-calendar
+			span.nav-label Staffing
 			span.label.label-info.pull-right 4
-		li: a
+		li: a(ui-sref='projets')
 			i.fa.fa-bank
-			span.nav-label Entreprises
+			span.nav-label Projets
 
 template#app-index
-	#wrapper
-		nav.navbar-default.navbar-static-side(ng-include='"app-menu"', role='navigation')
-
-		#page-wrapper.gray-bg
-			div(ng-include='"app-topnav"')
-
-			div(ui-view)
-
-			div(ng-include='"app-footer"')
+	h1 Intranet Salesway
+	p Salut !

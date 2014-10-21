@@ -3,9 +3,10 @@
 var express = require('express');
 
 var app = express();
+var PORT = 8888;
 
 app.use(express.static(__dirname + '/static'));
 
-app.listen(8000, function () {
-	console.log('listening.');
+app.listen(PORT, function () {
+	console.log('listening on ' + PORT);
 });
