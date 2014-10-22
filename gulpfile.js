@@ -38,7 +38,7 @@ var srvproc = null;
 
 gulp.task('spawnserver', ['killserver'], function () {
 	gutil.log('** launching server');
-	srvproc = cp.spawn('./runserver.js', [], {cwd: __dirname});
+	srvproc = cp.spawn(process.execPath, [__dirname + '/runserver.js'], {cwd: __dirname});
 	srvproc.stdout.pipe(process.stdout);
 	srvproc.stderr.pipe(process.stderr);
 });
@@ -59,3 +59,12 @@ gulp.task('dev', ['angular', 'spawnserver'], function () {
 });
 
 gulp.task('default', ['angular']);
+
+process.on('uncaughtException', function(err) {
+	console.log('Caught exception: ' + err);
+	if (srvproc) {
+		srvproc.kill(function () {
+			process.exit(255);
+		});
+	}
+});
