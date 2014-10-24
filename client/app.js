@@ -23,6 +23,10 @@ mod.config(['$stateProvider', '$urlRouterProvider', function ($state, $router) {
 		url: '/index',
 		templateProvider: tc('app-index')
 	})
+	.state('projets', {
+		url: '/projets',
+		templateProvider: tc('app-projets-index')
+	})
 	.state('staffing', {
 		url: '/staffing',
 		templateProvider: tc('app-staffing-index')

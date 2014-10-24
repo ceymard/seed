@@ -2,15 +2,30 @@
 module app.timesheet.templates
 
 template#app-timesheet-index
-	.row.border-bottom.white-bg
-		.col-sm-3
-			h1 Hey !
-			p This is the timesheet.
-		.col-sm-6
+	.row
+		.col-lg-12
 			.ibox.float-e-margins
 				.ibox-title
 					h5
 						| Timesheet &ndash;&nbsp;
-						small Merci de la remplir !
+						small Semaine du <em>20 octobre 2014</em> au <em>26 octobre 2014</em>
 				.ibox-content
-					h1 Yeash !
+					.row
+						.col-lg-8
+							table.table.table-striped.table-bordered
+								thead
+									tr
+										th Jour
+										th Matin
+										th Après-Midi
+										th Nocturne
+								tbody
+									tr(ng-repeat='day in ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]')
+										td {{day}}
+										td
+										td
+										td
+					.row
+						.col-lg-12
+							p.
+								Les nocturnes sont à remplir au feeling. ;)

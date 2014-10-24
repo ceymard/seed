@@ -3,23 +3,35 @@ module app.templates
 
 template#app-topnav
 	.row.border-bottom.white-bg
-		.col-sm-3
-			h1 Test.
-
 
 template#app-footer
 
 template#app-menu
 	ul.nav#side-menu
-		li: a(ui-sref='timesheet' ui-sref-active='active')
+		//- Header sympa avec petit gravatar.
+		li.nav-header
+			.dropdown.profile-element
+				span
+					img.avatar(src='http://www.gravatar.com/avatar/deafc512dd0c1c22006665bcea88f15b?s=60')
+				a.dropdown-toggle(href='javascript://')
+					span.clear
+						span.block.m-t-xs
+							b Christophe Eymard
+						span.text-muted.text-xs.block CEY
+
+		//- Le menu commence réellement ici
+		li(ui-sref-active='active'): a(ui-sref='index')
+			i.fa.fa-th-large
+			span.nav-label Dashboard
+		//- Le menu commence réellement ici
+		li(ui-sref-active='active'): a(ui-sref='timesheet')
 			i.fa.fa-th-list
 			span.nav-label Timesheet
-			span.label.label-warning.pull-right 23/48
-		li: a(ui-sref='staffing')
+			span.pull-right.label.label-info NEW
+		li(ui-sref-active='active'): a(ui-sref='staffing')
 			i.fa.fa-calendar
 			span.nav-label Staffing
-			span.label.label-info.pull-right 4
-		li: a(ui-sref='projets')
+		li(ui-sref-active='active'): a(ui-sref='projets')
 			i.fa.fa-bank
 			span.nav-label Projets
 
